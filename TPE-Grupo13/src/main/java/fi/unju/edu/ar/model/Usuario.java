@@ -2,12 +2,27 @@ package fi.unju.edu.ar.model;
 
 import java.time.LocalDate;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.FutureOrPresent;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Usuario {
-    
+	@Size(min=3, max=20, message="El nombre debe tener entre 3 a 20 caracteres")
+	@NotEmpty(message="El nombre del alumno no puede ser vacio")
     private String nombre;
+	@NotEmpty @Email
     private String email;
+	@NotNull @FutureOrPresent(message="La fecha debe ser hoy o posterior")
+	@DateTimeFormat(pattern="yyyy-MM-dd")
     private LocalDate fechaNac;
+    @Min(value=1000000,message="El DNI debe ser mayor a 1.000.000")
     private int dni;
+    @NotEmpty(message="Esta Vacio")
     private Candidato candidato;
 
     
