@@ -20,7 +20,7 @@
             <div class="">
                 <div class="row align-items-center mt-5 ">
                     <div class="col-6 col-md-6 offset-md-3">
-                        <form th:action="@{/pci/guardar}" method="POST" th:object="${usuario}">
+                        <form th:action="@{/votantes/guardar}" method="POST" th:object="${usuario}">
                             <h3 class="mb-4">Nuevo voto 👍 </h3>
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="dniId">DNI </label>
@@ -32,8 +32,8 @@
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="nombresId">Nombres </label>
                                 <input th:field="*{nombre}" type="text" id="nombresId" class="form-control" />
-                                <div class="alert alert-danger text-black" th:if="${#fields.hasErrors('nombre')}"
-                                    th:errors="*{nombre}"></div>
+                                <div class="alert alert-danger text-black" th:if="${#fields.hasErrors('Nombre')}"
+                                    th:errors="*{Nombre}"></div>
                             </div>
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="emailId">Email </label>

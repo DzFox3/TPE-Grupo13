@@ -22,7 +22,7 @@ public class Usuario {
     private LocalDate fechaNac;
     @Min(value=1000000,message="El DNI debe ser mayor a 1.000.000")
     private int dni;
-    @NotEmpty(message="Esta Vacio")
+    @NotNull(message="Debe seleccionar un candidato")
     private Candidato candidato;
 
     

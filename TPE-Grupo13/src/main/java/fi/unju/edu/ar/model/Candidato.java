@@ -1,25 +1,17 @@
 package fi.unju.edu.ar.model;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
 public class Candidato {
-	@Min(value=1, message="El valor mínimo es 1") @Max(value=9999,message="El valor máximo permitido es 9999")
+	
 	private int Codigo;
-	@Size(min=3, max=20, message="El nombre debe tener entre 3 a 20 caracteres")
-	@NotEmpty(message="El nombre del alumno no puede ser vacio")
 	private String Nombre;
-	@NotNull(message="Esta Vacio")
 	private String Genero;
-	  @NotEmpty(message="Esta Vacio")
 	private String Descripcion;
 	private int Votos;
+	
 	public Candidato() {
 		
 	}
+	
 	public Candidato(int codigo, String nombre, String genero, String descripcion, int votos) {
 		this.Codigo  = codigo;
 		this.Nombre = nombre;
