@@ -15,7 +15,7 @@ public class VotantesController {
 	
 	@GetMapping("/listaV")
     public String getVotantesPage(Model model) {
-        return "listaV";
+        return "votantes";
     }
 
 }
