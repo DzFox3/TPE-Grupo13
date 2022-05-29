@@ -17,7 +17,8 @@ public class CandidatoController {
 //    public String getInicioPage(Model model) {
 //        return "candidatos";
 //    }
-	
+
+    
 	
 	@GetMapping("/listaC")
     public ModelAndView getListaCandidatos(){

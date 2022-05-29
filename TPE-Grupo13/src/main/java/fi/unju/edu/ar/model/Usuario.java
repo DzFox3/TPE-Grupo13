@@ -7,16 +7,20 @@ public class Usuario {
     private String nombre;
     private String email;
     private LocalDate fechaNac;
+    private int dni;
+    private Candidato candidato;
 
     
     public Usuario() {
     }
 
 
-    public Usuario(String nombre, String email, LocalDate fechaNac) {
+    public Usuario(String nombre, String email, LocalDate fechaNac, int dni, Candidato candidato) {
         this.nombre = nombre;
         this.email = email;
         this.fechaNac = fechaNac;
+        this.dni = dni;
+        this.candidato = candidato;
     }
 
 
@@ -49,6 +53,29 @@ public class Usuario {
         this.fechaNac = fechaNac;
     }
 
+
+    public int getDni() {
+        return dni;
+    }
+
+
+    public void setDni(int dni) {
+        this.dni = dni;
+    }
+
+
+    public Candidato getCandidato() {
+        return candidato;
+    }
+
+
+    public void setCandidato(Candidato candidato) {
+        this.candidato = candidato;
+    }
+    
+    
+    
+    
 
     
 }

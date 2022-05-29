@@ -27,12 +27,10 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="alumno :${alumnos}">
-							<th scope="row" th:text="${alumno.dni}"></th>
-							<td th:text="${alumno.nombre}"></td>
-							<td th:text="${alumno.apellido}"></td>
-							<td th:text="${alumno.email}"></td>
-							<td th:text="${alumno.telefono}"></td>
+						<tr th:each="usuario :${votantes}">
+							<td th:text="${usuario.nombre}"></td>
+							<td th:text="${usuario.email}"></td>
+							<td th:text="${usuario.fechaNac}"></td>
 						</tr>
 					</tbody>
 				</table>

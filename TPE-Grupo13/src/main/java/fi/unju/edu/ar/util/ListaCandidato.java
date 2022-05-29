@@ -12,7 +12,7 @@ public class ListaCandidato {
 	public ListaCandidato(){
         candidato = new ArrayList<Candidato>();
 
-        candidato.add(new Candidato(1010,"Freddy Mercury", "Rock", "Canta Autor", 0));
+        candidato.add(new Candidato(1010,"Freddy Duki", "Rock", "Canta Autor", 0));
         candidato.add(new Candidato(1010,"Freddy Mercury", "Rock", "Canta Autor", 0));
         candidato.add(new Candidato(1010,"Freddy Mercury", "Rock", "Canta Autor", 0));
         candidato.add(new Candidato(1010,"Freddy Mercury", "Rock", "Canta Autor", 0));

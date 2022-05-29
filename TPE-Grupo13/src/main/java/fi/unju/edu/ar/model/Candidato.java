@@ -2,6 +2,7 @@ package fi.unju.edu.ar.model;
 
 public class Candidato {
 	
+	
 	private int Codigo;
 	private String Nombre;
 	private String Genero;
