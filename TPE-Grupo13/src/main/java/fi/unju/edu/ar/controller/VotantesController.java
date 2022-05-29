@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-@RequestMapping("/pci")
+@RequestMapping("/votantes")
 public class VotantesController {
 	
 	
 	
-	@GetMapping("/votantes")
+	@GetMapping("/listaV")
     public String getVotantesPage(Model model) {
-        return "votantes";
+        return "listaV";
     }
 
 }

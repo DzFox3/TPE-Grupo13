@@ -8,6 +8,10 @@ public class Candidato {
 	private String Descripcion;
 	private int Votos;
 	
+	public Candidato() {
+		
+	}
+	
 	public Candidato(int codigo, String nombre, String genero, String descripcion, int votos) {
 		this.Codigo  = codigo;
 		this.Nombre = nombre;
