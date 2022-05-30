@@ -46,7 +46,7 @@
                             </div>
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="votosdId">Votos </label>
-                                <input th:field="*{Votos}" type="text" id="votosdId" class="form-control" />
+                                <input th:field="*{Votos}" type="text" id="votosdId" class="form-control" disabled="disabled" />
                                 <div class="alert alert-danger text-black" th:if="${#fields.hasErrors('Votos')}"
                                     th:errors="*{Votos}"></div>
                             </div>

@@ -43,7 +43,7 @@ public class CandidatoController {
         mav.addObject("candidato", candidato);
         return mav;
     }
-
+    
     @PostMapping("/modificar")
 	public ModelAndView editarDatosAlumno(@Validated @ModelAttribute("candidato") Candidato candidato, BindingResult bindingResult ) {
 		if(bindingResult.hasErrors()) {

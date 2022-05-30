@@ -15,8 +15,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Usuario {
-	@Size(min=3, max=20, message="El nombre debe tener entre 3 a 20 caracteres")
-	@NotEmpty(message="El nombre del alumno no puede ser vacio")
+	@Size(min=3, max=30, message="El nombre debe tener entre 3 a 30 caracteres")
+	@NotEmpty(message="El nombre del usuario no puede ser vacio")
     private String nombre;
 	@NotEmpty @Email
     private String email;
