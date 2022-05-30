@@ -20,6 +20,7 @@ public class Usuario {
     private String nombre;
 	@NotEmpty @Email
     private String email;
+	
 	@DateTimeFormat(pattern="yyyy-MM-dd")
     private LocalDate fechaNac;
     @Min(value=1000000,message="El DNI debe ser mayor a 1.000.000")

@@ -50,7 +50,8 @@ public class VotantesController {
         ModelAndView mov = new ModelAndView("gracias");
         
         if (votanteService.saveVotante(usuario)) {
-            LOGGER.info("Se guardo un objeto usuario en la lista de usuario");
+            LOGGER.info("Se registra usuario: "+ usuario.getNombre());
+            LOGGER.info("Usuario: "+ usuario.getNombre() + " realiza votacion");
         }
         return mov;
         
