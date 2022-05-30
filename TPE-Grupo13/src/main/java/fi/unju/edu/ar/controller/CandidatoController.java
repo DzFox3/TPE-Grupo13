@@ -55,6 +55,7 @@ public class CandidatoController {
 		
 		ModelAndView mav = new ModelAndView("redirect:/candidatos/listaC");
 		candidatoService.modifyCandidato(candidato);
+		LOGGER.info("uardado");
 		return mav;
 		
 	}

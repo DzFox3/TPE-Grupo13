@@ -21,7 +21,6 @@ public class VotanteServiceImp implements IVotanteService{
 	
 	@Override
 	public Boolean saveVotante(Usuario usuario) {
-		
 		return listaVotante.getUsuario().add(usuario);
 	}
 }
