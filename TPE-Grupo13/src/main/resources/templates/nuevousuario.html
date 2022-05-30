@@ -32,8 +32,8 @@
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="nombresId">Nombres </label>
                                 <input th:field="*{nombre}" type="text" id="nombresId" class="form-control" />
-                                <div class="alert alert-danger text-black" th:if="${#fields.hasErrors('Nombre')}"
-                                    th:errors="*{Nombre}"></div>
+                                <div class="alert alert-danger text-black" th:if="${#fields.hasErrors('nombre')}"
+                                    th:errors="*{nombre}"></div>
                             </div>
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="emailId">Email </label>

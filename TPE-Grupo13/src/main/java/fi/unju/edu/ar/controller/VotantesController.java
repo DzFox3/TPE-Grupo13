@@ -33,8 +33,14 @@ public class VotantesController {
     
 
     @PostMapping("/guardar")
-    public ModelAndView guardarCurso( @ModelAttribute("usuario") Usuario usuario  ) {
+    public ModelAndView guardarCurso(  @Validated @ModelAttribute("usuario") Usuario usuario,BindingResult bindingResult  ) {
         
+    	if (bindingResult.hasErrors()) {
+            ModelAndView mav = new ModelAndView("nuevousuario");
+            mav.addObject("Usuario", usuario);
+            return mav;
+        }
+    
         ModelAndView mov = new ModelAndView("gracias");
         ListaCandidato listaCandidato = new ListaCandidato();
         Optional<Candidato> candidato = listaCandidato.getCandidato().stream().filter(d -> d.getCodigo() == usuario.getCandidato().getCodigo()).findFirst();
@@ -44,6 +50,7 @@ public class VotantesController {
         }
         mov.addObject("candidatos", listaCandidato.getCandidato());
         return mov;
+        
     }
     
 	
