@@ -67,4 +67,10 @@ public class CandidatoController {
         return movCandidatos;
     }
 
+    @GetMapping("/eliminar/{dni}")
+    public ModelAndView deleteCandidato(@PathVariable("dni")int codigo){
+        ModelAndView movCandidatos = new ModelAndView("redirect:/candidatos/listaC");
+        candidatoService.deleteCandidato(codigo);
+        return movCandidatos;
+    }
 }

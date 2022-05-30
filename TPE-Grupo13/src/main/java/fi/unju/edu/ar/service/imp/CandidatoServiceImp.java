@@ -30,6 +30,9 @@ public class CandidatoServiceImp implements ICadidatoService {
 	@Override
 	public void deleteCandidato(int codigo) {
 
+		Optional<Candidato> candidato = listaCandidato.getCandidato().stream().filter(c -> c.getCodigo() == codigo)
+		.findFirst();
+		listaCandidato.getCandidato().remove(candidato.get());
 	}
 
 	@Override
