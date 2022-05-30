@@ -62,8 +62,7 @@ public class CandidatoController {
     @GetMapping("/listaC")
     public ModelAndView getListaCandidatos() {
         ModelAndView movCandidatos = new ModelAndView("candidatos");
-        ListaCandidato listaCandidatos = new ListaCandidato();
-        movCandidatos.addObject("candidatos", listaCandidatos.getCandidato());
+        movCandidatos.addObject("candidatos", candidatoService.getListaCandidato().getCandidato());
         return movCandidatos;
     }
 
