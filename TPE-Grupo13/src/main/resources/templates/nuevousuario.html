@@ -63,8 +63,10 @@
                                 <div class="alert alert-danger text-black" role="alert"
                                     th:if="${#fields.hasErrors('candidato')}" th:errors="*{candidato}"></div>
                             	</div>
-                            <button type="submit" class="btn btn-outline-success btn-block mb-4">Enviar</button>
-                            <button type="submit" class="btn btn-outline-dark btn-block mb-4">Cancelar</button>
+                            	
+                            	<button type="submit" class="btn btn-outline-success btn-block mb-4">Enviar</button>
+                            	<!--  <a class="btn btn-outline-success btn-block mb-4" th:ref="@{/votantes/guardar}">Enviar</a>-->
+                            	<a class="btn btn-outline-dark btn-block mb-4" th:href="@{/pci/inicio}">Cancelar</a>
                         </form>
                     </div>
                 </div>
