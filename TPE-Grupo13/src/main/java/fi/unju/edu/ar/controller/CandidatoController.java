@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import fi.unju.edu.ar.model.Candidato;
-import fi.unju.edu.ar.service.ICadidatoService;
+import fi.unju.edu.ar.service.ICandidatoService;
 import fi.unju.edu.ar.util.ListaCandidato;
 
 @Controller
@@ -27,7 +27,7 @@ public class CandidatoController {
 
     @Autowired
 	@Qualifier("CandidatoServiceImpList")
-	private ICadidatoService candidatoService;
+	private ICandidatoService candidatoService;
 
     private static final Log LOGGER = LogFactory.getLog(CandidatoController.class);
 
