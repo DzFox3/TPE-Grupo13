@@ -20,6 +20,7 @@
                         <form th:action="@{/candidatos/modificar}" method="POST" th:object="${candidato}">
                             <h3 class="mb-4">Editar Candidato </h3>
                             <div class="form-outline mb-4">
+                            	<input type="hidden" th:field="*{codigo}"/>
                                 <label class="form-label" for="codigoId">Codigo </label>
                                 <input th:field="*{Codigo}" type="number" id="codigoId" class="form-control" disabled="disabled" />
                                 <!--Mostrar el mensaje de error-->
