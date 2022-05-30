@@ -17,8 +17,6 @@ public class Usuario {
     private String nombre;
 	@NotEmpty @Email
     private String email;
-	@NotNull @FutureOrPresent(message="La fecha debe ser hoy o posterior")
-	@DateTimeFormat(pattern="yyyy-MM-dd")
     private LocalDate fechaNac;
     @Min(value=1000000,message="El DNI debe ser mayor a 1.000.000")
     private int dni;
