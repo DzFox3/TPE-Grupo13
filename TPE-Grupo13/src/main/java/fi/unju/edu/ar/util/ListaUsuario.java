@@ -3,9 +3,13 @@ package fi.unju.edu.ar.util;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Component;
+
 import fi.unju.edu.ar.model.Candidato;
 import fi.unju.edu.ar.model.Usuario;
 
+
+@Component
 public class ListaUsuario {
     
     private ArrayList<Usuario> usuario;

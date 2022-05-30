@@ -2,8 +2,12 @@ package fi.unju.edu.ar.util;
 
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Component;
+
 import fi.unju.edu.ar.model.Candidato;
 
+
+@Component
 public class ListaCandidato {
 
     private ArrayList<Candidato> candidato;

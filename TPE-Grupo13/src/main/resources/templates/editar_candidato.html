@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Inicio</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+
+<body>
+
+	<header th:replace="/layout/header::header"></header>
+
+	<div class="container">
+        <section>
+            <div class="">
+                <div class="row align-items-center mt-5 ">
+                    <div class="col-6 col-md-6 offset-md-3">
+                        <form th:action="@{/candidatos/modificar}" method="POST" th:object="${candidato}">
+                            <h3 class="mb-4">Editar Candidato </h3>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="codigoId">Codigo </label>
+                                <input th:field="*{Codigo}" type="number" id="codigoId" class="form-control" disabled="disabled" />
+                                <!--Mostrar el mensaje de error-->
+                                <div class="alert alert-danger text-black" role="alert"
+                                    th:if="${#fields.hasErrors('Codigo')}" th:errors="*{Codigo}"></div>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="nombreId">Nombre </label>
+                                <input th:field="*{Nombre}" type="text" id="nombresId" class="form-control" />
+                                <div class="alert alert-danger text-black" th:if="${#fields.hasErrors('Nombre')}"
+                                    th:errors="*{Nombre}"></div>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="generoId">Genero </label>
+                                <input th:field="*{Genero}" type="text" id="generoId" class="form-control" />
+                                <div class="alert alert-danger text-black" th:if="${#fields.hasErrors('Genero')}"
+                                    th:errors="*{Genero}"></div>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="descripcionId">Descripcion </label>
+                                <input th:field="*{Descripcion}" type="text" id="generoId" class="form-control" />
+                                <div class="alert alert-danger text-black" th:if="${#fields.hasErrors('Descripcion')}"
+                                    th:errors="*{Descripcion}"></div>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="votosdId">Votos </label>
+                                <input th:field="*{Votos}" type="text" id="votosdId" class="form-control" />
+                                <div class="alert alert-danger text-black" th:if="${#fields.hasErrors('Votos')}"
+                                    th:errors="*{Votos}"></div>
+                            </div>
+                            <button type="submit" class="btn btn-outline-success btn-block mb-4">Enviar</button>
+                            <button type="submit" class="btn btn-outline-dark btn-block mb-4">Cancelar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+		
+	<footer th:replace="/layout/footer::footer"></footer>
+
+	<script src="/webjars/jquery/jquery.min.js" type="text/javascript"></script>
+	<script src="/webjars/jquery/jquery.min.js" type="text/javascript"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+</body>
+
+</html>

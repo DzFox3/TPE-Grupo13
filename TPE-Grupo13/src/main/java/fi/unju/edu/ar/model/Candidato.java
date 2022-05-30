@@ -1,5 +1,8 @@
 package fi.unju.edu.ar.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Candidato {
 	
 	private int Codigo;

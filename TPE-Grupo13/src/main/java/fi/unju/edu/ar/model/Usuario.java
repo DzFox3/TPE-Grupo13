@@ -10,7 +10,10 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public class Usuario {
 	@Size(min=3, max=20, message="El nombre debe tener entre 3 a 20 caracteres")
 	@NotEmpty(message="El nombre del alumno no puede ser vacio")
