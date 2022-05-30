@@ -6,11 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fi.unju.edu.ar.model.Candidato;
-import fi.unju.edu.ar.service.ICadidatoService;
+import fi.unju.edu.ar.service.ICandidatoService;
 import fi.unju.edu.ar.util.ListaCandidato;
 
 @Service("CandidatoServiceImpList")
-public class CandidatoServiceImp implements ICadidatoService {
+public class CandidatoServiceImp implements ICandidatoService {
 
 	@Autowired
 	private ListaCandidato listaCandidato;
