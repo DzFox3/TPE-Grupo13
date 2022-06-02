@@ -8,57 +8,57 @@ import org.springframework.stereotype.Component;
 @Component
 public class Candidato {
 	
-	private int Codigo;
+	private int codigo;
 	@Size(min=4, max=6, message="El nombre debe tener entre 3 a 30 caracteres")
 	@NotEmpty(message="El nombre del candidato no puede ser vacio")
-	private String Nombre;
+	private String nombre;
 	@Size(min=3, max=30, message="El genero debe tener entre 3 a 30 caracteres")
 	@NotEmpty(message="El genero no puede ser vacio")
-	private String Genero;
+	private String genero;
 	@NotEmpty(message="La descripcion no puede estar vacia")
-	private String Descripcion;
-	private int Votos;
+	private String descripcion;
+	private int votos;
 	
 	public Candidato() {
 		
 	}
 	
 	public Candidato(int codigo, String nombre, String genero, String descripcion, int votos) {
-		this.Codigo  = codigo;
-		this.Nombre = nombre;
-		this.Genero = genero;
-		this.Descripcion = descripcion;
-		this.Votos = votos;
+		this.codigo  = codigo;
+		this.nombre = nombre;
+		this.genero = genero;
+		this.descripcion = descripcion;
+		this.votos = votos;
 	}
 	
 	public int getCodigo() {
-		return Codigo;
+		return codigo;
 	}
 	public void setCodigo(int codigo) {
-		Codigo = codigo;
+		codigo = codigo;
 	}
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		nombre = nombre;
 	}
 	public String getGenero() {
-		return Genero;
+		return genero;
 	}
 	public void setGenero(String genero) {
-		Genero = genero;
+		genero = genero;
 	}
 	public String getDescripcion() {
-		return Descripcion;
+		return descripcion;
 	}
 	public void setDescripcion(String descripcion) {
-		Descripcion = descripcion;
+		descripcion = descripcion;
 	}
 	public int getVotos() {
-		return Votos;
+		return votos;
 	}
 	public void setVotos(int votos) {
-		Votos = votos;
+		votos = votos;
 	}
 }
