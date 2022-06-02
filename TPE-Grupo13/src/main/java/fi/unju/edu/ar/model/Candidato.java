@@ -2,7 +2,6 @@ package fi.unju.edu.ar.model;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
 
 import org.springframework.stereotype.Component;
 
@@ -31,35 +30,46 @@ public class Candidato {
 		this.descripcion = descripcion;
 		this.votos = votos;
 	}
-	
+
 	public int getCodigo() {
 		return codigo;
 	}
+
 	public void setCodigo(int codigo) {
-		codigo = codigo;
+		this.codigo = codigo;
 	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
-		nombre = nombre;
+		this.nombre = nombre;
 	}
+
 	public String getGenero() {
 		return genero;
 	}
+
 	public void setGenero(String genero) {
-		genero = genero;
+		this.genero = genero;
 	}
+
 	public String getDescripcion() {
 		return descripcion;
 	}
+
 	public void setDescripcion(String descripcion) {
-		descripcion = descripcion;
+		this.descripcion = descripcion;
 	}
+
 	public int getVotos() {
 		return votos;
 	}
+
 	public void setVotos(int votos) {
-		votos = votos;
+		this.votos = votos;
 	}
+	
+	
 }
