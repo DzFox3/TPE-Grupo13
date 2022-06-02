@@ -15,7 +15,6 @@ public class ListaCandidato {
     
 	public ListaCandidato(){
         candidato = new ArrayList<Candidato>();
-        //candidato.add(new Candidato(9999,"Ninguno", "NULL", "NULL", 0));
         candidato.add(new Candidato(1010,"Duki", "Trap", "Canta Autor", 0));
         candidato.add(new Candidato(1011,"Nicky Nicole", "Trap", "Canta Autor", 0));
         candidato.add(new Candidato(1012,"Paulo Londra", "Trap", "Canta Autor", 0));

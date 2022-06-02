@@ -51,8 +51,6 @@ public class VotantesController {
         
     }
 
-
-	
 	@GetMapping("/listaV")
     public ModelAndView getListaCandidatos(){
         ModelAndView movVotantes = new ModelAndView("votantes");

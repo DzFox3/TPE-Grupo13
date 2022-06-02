@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class Candidato {
 	
 	private int Codigo;
-	@Size(min=3, max=30, message="El nombre debe tener entre 3 a 30 caracteres")
+	@Size(min=4, max=6, message="El nombre debe tener entre 3 a 30 caracteres")
 	@NotEmpty(message="El nombre del candidato no puede ser vacio")
 	private String Nombre;
 	@Size(min=3, max=30, message="El genero debe tener entre 3 a 30 caracteres")

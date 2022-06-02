@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import fi.unju.edu.ar.model.Candidato;
+import fi.unju.edu.ar.model.Usuario;
 import fi.unju.edu.ar.service.ICandidatoService;
 
 @Controller
@@ -33,7 +34,24 @@ public class CandidatoController {
     // public String getInicioPage(Model model) {
     // return "candidatos";
     // }
-
+    @PostMapping("/guardar")
+    public ModelAndView guardarCandidato(@Validated @ModelAttribute("candidato") Candidato candidato,BindingResult bindingResult  ) {
+        
+    	if (bindingResult.hasErrors()) {
+            ModelAndView mav = new ModelAndView("nuevocandidato");
+            mav.addObject("candidato", candidato);
+            LOGGER.info(candidato.getNombre());
+            return mav;
+        }
+    
+        ModelAndView mov = new ModelAndView("gracias");
+        
+        if (candidatoService.saveCandidato(candidato)) {
+            LOGGER.info("Se cargo candidato: "+ candidato.getNombre());
+        }
+        return mov;
+        
+    }
     @GetMapping("/editar/{codigo}")
     public ModelAndView getEditCandidatoPage(@PathVariable(value = "codigo") int codigo) {
         ModelAndView mav = new ModelAndView("editar_candidato");
@@ -43,7 +61,7 @@ public class CandidatoController {
     }
     
     @PostMapping("/modificar")
-	public ModelAndView editarDatosAlumno(@Validated @ModelAttribute("candidato") Candidato candidato, BindingResult bindingResult ) {
+	public ModelAndView editarDatosCandidato(@Validated @ModelAttribute("candidato") Candidato candidato, BindingResult bindingResult ) {
 		if(bindingResult.hasErrors()) {
 			LOGGER.info("ocurrió un error "+candidato);
 			ModelAndView mav = new ModelAndView("editar_candidato");

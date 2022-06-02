@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lista Votantes</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+
+<body>
+
+	<header th:replace="/layout/header::header"></header>
+	<br>
+	
+	<div class="container">
+        <section>
+            <div class="">
+                <div class="row align-items-center mt-5 ">
+                    <div class="col-6 col-md-6 offset-md-3">
+                        <form th:action="@{/candidatos/guardar}" method="POST" th:object="${candidato}">
+                            <h3 class="mb-4">Nuevo Candidato!! </h3>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="codigoId">Codigo </label>
+                                <input th:field="*{codigo}" type="number" id="codigoId" class="form-control" />
+                                <!--Mostrar el mensaje de error-->
+                                <div class="alert alert-danger text-black" role="alert"
+                                    th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}"></div>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="nombresId">Nombre del Artista </label>
+                                <input th:field="*{nombre}" type="text" id="nombresId" class="form-control" />
+                                <div class="alert alert-danger text-black" th:if="${#fields.hasErrors('nombre')}"
+                                    th:errors="*{nombre}"></div>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="generoId">Genero Musical </label>
+                                <input th:field="*{genero}" type="text" id="generoId" class="form-control" />
+                                <div class="alert alert-danger text-black" th:if="${#fields.hasErrors('genero')}"
+                                    th:errors="*{genero}"></div>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="descripcionId">Breve Descripcion </label>
+                                <input th:field="*{descripcion}" type="text" id="descripcionId" class="form-control" />
+                                <div class="alert alert-danger text-black" th:if="${#fields.hasErrors('descripcion')}"
+                                th:errors="*{descripcion}"></div>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="votosId">Votos¿ </label>
+                                <input th:field="*{votos}" type="number" id="votosId" class="form-control" />
+                                <!--Mostrar el mensaje de error-->
+                                <div class="alert alert-danger text-black" role="alert"
+                                    th:if="${#fields.hasErrors('votos')}" th:errors="*{votos}"></div>
+                            </div>
+                            	<button type="submit" class="btn btn-outline-success btn-block mb-4">Enviar</button>
+                            	<!--  <a class="btn btn-outline-success btn-block mb-4" th:ref="@{/votantes/guardar}">Enviar</a>-->
+                            	<a class="btn btn-outline-dark btn-block mb-4" th:href="@{/pci/inicio}">Cancelar</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+
+	<footer th:replace="/layout/footer::footer"></footer>
+
+	<script src="/webjars/jquery/jquery.min.js" type="text/javascript"></script>
+	<script src="/webjars/jquery/jquery.min.js" type="text/javascript"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+</body>
+
+</html>

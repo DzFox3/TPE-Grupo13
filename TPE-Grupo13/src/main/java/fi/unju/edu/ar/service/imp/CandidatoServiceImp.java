@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fi.unju.edu.ar.model.Candidato;
+import fi.unju.edu.ar.model.Usuario;
 import fi.unju.edu.ar.service.ICandidatoService;
 import fi.unju.edu.ar.util.ListaCandidato;
 
@@ -14,7 +15,12 @@ public class CandidatoServiceImp implements ICandidatoService {
 
 	@Autowired
 	private ListaCandidato listaCandidato;
-
+	
+	@Override
+	public Boolean saveCandidato(Candidato candidato) {
+		return listaCandidato.getCandidato().add(candidato);
+	}
+	
 	@Override
 	public void modifyCandidato(Candidato candidato) {
 		for (Candidato can : listaCandidato.getCandidato()) {
