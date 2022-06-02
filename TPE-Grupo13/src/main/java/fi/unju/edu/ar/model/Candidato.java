@@ -1,5 +1,6 @@
 package fi.unju.edu.ar.model;
 
+import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
@@ -9,10 +10,10 @@ import org.springframework.stereotype.Component;
 public class Candidato {
 	
 	private int codigo;
-	@Size(min=4, max=6, message="El nombre debe tener entre 3 a 30 caracteres")
+	@Max(value=6, message="El nombre debe tener entre 3 a 30 caracteres")
 	@NotEmpty(message="El nombre del candidato no puede ser vacio")
 	private String nombre;
-	@Size(min=3, max=30, message="El genero debe tener entre 3 a 30 caracteres")
+	@Max(value=30, message="El genero debe tener entre 3 a 30 caracteres")
 	@NotEmpty(message="El genero no puede ser vacio")
 	private String genero;
 	@NotEmpty(message="La descripcion no puede estar vacia")
