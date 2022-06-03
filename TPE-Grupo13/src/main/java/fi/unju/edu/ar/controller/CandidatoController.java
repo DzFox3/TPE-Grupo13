@@ -1,7 +1,5 @@
 package fi.unju.edu.ar.controller;
 
-
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +22,8 @@ import fi.unju.edu.ar.service.ICandidatoService;
 public class CandidatoController {
 
     @Autowired
-	@Qualifier("CandidatoServiceImpList")
-	private ICandidatoService candidatoService;
+    @Qualifier("CandidatoServiceImpList")
+    private ICandidatoService candidatoService;
 
     private static final Log LOGGER = LogFactory.getLog(CandidatoController.class);
 
@@ -34,23 +32,25 @@ public class CandidatoController {
     // return "candidatos";
     // }
     @PostMapping("/guardar")
-    public ModelAndView guardarCandidato(@Validated @ModelAttribute("candidato") Candidato candidato,BindingResult bindingResult  ) {
-        
-    	if (bindingResult.hasErrors()) {
+    public ModelAndView guardarCandidato(@Validated @ModelAttribute("candidato") Candidato candidato,
+            BindingResult bindingResult) {
+
+        if (bindingResult.hasErrors()) {
             ModelAndView mav = new ModelAndView("nuevocandidato");
             mav.addObject("candidato", candidato);
-            LOGGER.info(candidato.getNombre());
+            LOGGER.info("error al crear un nuevo candidato");
             return mav;
         }
-    
+
         ModelAndView mov = new ModelAndView("gracias");
-        
+
         if (candidatoService.saveCandidato(candidato)) {
-            LOGGER.info("Se cargo candidato: "+ candidato.getNombre());
+            LOGGER.info("Se cargo candidato: " + candidato.getNombre());
         }
         return mov;
-        
+
     }
+
     @GetMapping("/editar/{codigo}")
     public ModelAndView getEditCandidatoPage(@PathVariable(value = "codigo") int codigo) {
         ModelAndView mav = new ModelAndView("editar_candidato");
@@ -58,22 +58,23 @@ public class CandidatoController {
         mav.addObject("candidato", candidato);
         return mav;
     }
-    
+
     @PostMapping("/modificar")
-	public ModelAndView editarDatosCandidato(@Validated @ModelAttribute("candidato") Candidato candidato, BindingResult bindingResult ) {
-		if(bindingResult.hasErrors()) {
-			LOGGER.info("ocurrió un error "+candidato);
-			ModelAndView mav = new ModelAndView("editar_candidato");
-			mav.addObject("candidato", candidato);
-			return mav;
-		}
-		
-		ModelAndView mav = new ModelAndView("redirect:/candidatos/listaC");
-		candidatoService.modifyCandidato(candidato);
-		LOGGER.info("uardado");
-		return mav;
-		
-	}
+    public ModelAndView editarDatosCandidato(@Validated @ModelAttribute("candidato") Candidato candidato,
+            BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            LOGGER.info("ocurrió un error " + candidato);
+            ModelAndView mav = new ModelAndView("editar_candidato");
+            mav.addObject("candidato", candidato);
+            return mav;
+        }
+
+        ModelAndView mav = new ModelAndView("redirect:/candidatos/listaC");
+        candidatoService.modifyCandidato(candidato);
+        LOGGER.info("uardado");
+        return mav;
+
+    }
 
     @GetMapping("/listaC")
     public ModelAndView getListaCandidatos() {
@@ -83,7 +84,7 @@ public class CandidatoController {
     }
 
     @GetMapping("/eliminar/{dni}")
-    public ModelAndView deleteCandidato(@PathVariable("dni")int codigo){
+    public ModelAndView deleteCandidato(@PathVariable("dni") int codigo) {
         ModelAndView movCandidatos = new ModelAndView("redirect:/candidatos/listaC");
         candidatoService.deleteCandidato(codigo);
         return movCandidatos;

@@ -14,12 +14,12 @@ public class CandidatoServiceImp implements ICandidatoService {
 
 	@Autowired
 	private ListaCandidato listaCandidato;
-	
+
 	@Override
 	public Boolean saveCandidato(Candidato candidato) {
 		return listaCandidato.getCandidato().add(candidato);
 	}
-	
+
 	@Override
 	public void modifyCandidato(Candidato candidato) {
 		for (Candidato can : listaCandidato.getCandidato()) {
@@ -36,7 +36,7 @@ public class CandidatoServiceImp implements ICandidatoService {
 	public void deleteCandidato(int codigo) {
 
 		Optional<Candidato> candidato = listaCandidato.getCandidato().stream().filter(c -> c.getCodigo() == codigo)
-		.findFirst();
+				.findFirst();
 		listaCandidato.getCandidato().remove(candidato.get());
 	}
 
