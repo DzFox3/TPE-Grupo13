@@ -2,18 +2,19 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista Votantes</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lista Votantes</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 </head>
+
 <body>
 
-    <header th:replace="/layout/header::header"></header>
+	<header th:replace="/layout/header::header"></header>
 	<br>
-    <div class="container">
+	<div class="container">
 		<div class="row">
 			<h3 class="mb-5 text-muted">Lista Candidatos!!!</h3>
 			<div class="col-12 d-flex justify-content-center">
@@ -35,9 +36,33 @@
 							<td th:text="${candidato.descripcion}"></td>
 							<td th:text="${candidato.votos}"></td>
 							<td>
-								<a th:href="@{/candidatos/editar/}+${candidato.codigo}" id="editarDocente" class="btn btn-warning">Editar</a>
-								<a th:href="@{/candidatos/eliminar/}+${candidato.codigo}" id="eliminarDocente" class="btn btn-danger">Eliminar</a>
+								<a th:href="@{/candidatos/editar/}+${candidato.codigo}" id="editarDocente"
+									class="btn btn-warning">Editar</a>
+								<a th:href="@{/candidatos/eliminar/}+${candidato.codigo}" id="eliminarDocente"
+									class="btn btn-danger" data-bs-toggle="modal"
+									data-bs-target="#exampleModal">Eliminar</a>
 							</td>
+							<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+								aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Eliminar Candidato</h5>
+											<button type="button" class="btn-close" data-bs-dismiss="modal"
+												aria-label="Close"></button>
+										</div>
+										<div class="modal-body">
+											<p class="text-center text-danger text-uppercase fs-5 fw-bold">Esta seguro de eliminar el candidato?</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary"
+												data-bs-dismiss="modal">Close</button>
+											<a th:href="@{/candidatos/eliminar/}+${candidato.codigo}"
+												id="eliminarDocente" class="btn btn-danger">Eliminar</a>
+										</div>
+									</div>
+								</div>
+							</div>
 						</tr>
 					</tbody>
 				</table>
@@ -47,11 +72,12 @@
 
 
 
-    <footer th:replace="/layout/footer::footer"></footer>
+	<footer th:replace="/layout/footer::footer"></footer>
 
-    <script src="/webjars/jquery/jquery.min.js" type="text/javascript"></script>
-    <script src="/webjars/jquery/jquery.min.js" type="text/javascript"></script>
-    <script src="/webjars/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="/webjars/jquery/jquery.min.js" type="text/javascript"></script>
+	<script src="/webjars/jquery/jquery.min.js" type="text/javascript"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 
 </body>
+
 </html>
