@@ -36,9 +36,9 @@
 							<td th:text="${candidato.descripcion}"></td>
 							<td th:text="${candidato.votos}"></td>
 							<td>
-								<a th:href="@{/candidatos/editar/}+${candidato.codigo}" id="editarDocente"
+								<a th:href="@{/candidatos/editar/}+${candidato.codigo}" id="editarCandidato"
 									class="btn btn-warning">Editar</a>
-								<a th:href="@{/candidatos/eliminar/}+${candidato.codigo}" id="eliminarDocente"
+								<a th:href="@{/candidatos/eliminar/}+${candidato.codigo}" id="eliminarCandidato"
 									class="btn btn-danger" data-bs-toggle="modal"
 									data-bs-target="#exampleModal">Eliminar</a>
 							</td>

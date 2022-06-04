@@ -63,7 +63,7 @@ public class CandidatoController {
     public ModelAndView editarDatosCandidato(@Validated @ModelAttribute("candidato") Candidato candidato,
             BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            LOGGER.info("ocurrió un error " + candidato);
+            LOGGER.info("ocurrio un error " + candidato);
             ModelAndView mav = new ModelAndView("editar_candidato");
             mav.addObject("candidato", candidato);
             return mav;
@@ -71,7 +71,7 @@ public class CandidatoController {
 
         ModelAndView mav = new ModelAndView("redirect:/candidatos/listaC");
         candidatoService.modifyCandidato(candidato);
-        LOGGER.info("uardado");
+        LOGGER.info("guardado");
         return mav;
 
     }
