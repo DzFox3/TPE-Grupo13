@@ -1,6 +1,5 @@
 package fi.unju.edu.ar.model;
 
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
 
 import org.springframework.stereotype.Component;

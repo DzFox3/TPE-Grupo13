@@ -2,17 +2,17 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Inicio</title>
-	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
-	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 </head>
 
 <body>
 
-	<header th:replace="/layout/header::header"></header>
+    <header th:replace="/layout/header::header"></header>
 
-	<div class="container">
+    <div class="container">
         <section>
             <div class="">
                 <div class="row align-items-center mt-5 ">
@@ -20,9 +20,10 @@
                         <form th:action="@{/candidatos/modificar}" method="POST" th:object="${candidato}">
                             <h3 class="mb-4">Editar Candidato </h3>
                             <div class="form-outline mb-4">
-                            	<input type="hidden" th:field="*{codigo}"/>
+                                <input type="hidden" th:field="*{codigo}" />
                                 <label class="form-label" for="codigoId">Codigo </label>
-                                <input th:field="*{Codigo}" type="number" id="codigoId" class="form-control" disabled="disabled" />
+                                <input th:field="*{Codigo}" type="number" id="codigoId" class="form-control"
+                                    disabled="disabled" />
                                 <!--Mostrar el mensaje de error-->
                                 <div class="alert alert-danger text-black" role="alert"
                                     th:if="${#fields.hasErrors('Codigo')}" th:errors="*{Codigo}"></div>
@@ -47,7 +48,8 @@
                             </div>
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="votosdId">Votos </label>
-                                <input th:field="*{Votos}" type="text" id="votosdId" class="form-control" disabled="disabled" />
+                                <input th:field="*{Votos}" type="text" id="votosdId" class="form-control"
+                                    disabled="disabled" />
                                 <div class="alert alert-danger text-black" th:if="${#fields.hasErrors('Votos')}"
                                     th:errors="*{Votos}"></div>
                             </div>
@@ -60,12 +62,12 @@
         </section>
 
     </div>
-		
-	<footer th:replace="/layout/footer::footer"></footer>
 
-	<script src="/webjars/jquery/jquery.min.js" type="text/javascript"></script>
-	<script src="/webjars/jquery/jquery.min.js" type="text/javascript"></script>
-	<script src="/webjars/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <footer th:replace="/layout/footer::footer"></footer>
+
+    <script src="/webjars/jquery/jquery.min.js" type="text/javascript"></script>
+    <script src="/webjars/jquery/jquery.min.js" type="text/javascript"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 </body>
 
 </html>

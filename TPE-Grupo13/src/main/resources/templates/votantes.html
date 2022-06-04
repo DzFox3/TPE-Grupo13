@@ -18,7 +18,7 @@
 		<div class="row">
 			<div class="row">
 				<div class="col-3 ">
-					<a th:href="@{/pci/inicio}" class="btn btn-outline-primary mb-4">Volver</a>
+					<a th:href="@{/pci/inicio}" class="btn btn-outline-primary mb-4"> Volver</a>
 				</div>
 				<div class="col-3 offset-md-6">
 					<a th:href="@{/pci/nuevo}" class="btn btn-outline-primary mb-4">Nuevo Voto!</a>
@@ -56,8 +56,8 @@
 						<tr th:each="usuario:${votantes}">
 							<td>
 								<div class="d-flex align-items-center">
-									<img src="/profile/descargar (1).jpg" alt=""
-										style="width: 45px; height: 45px" class="rounded-circle" />
+									<img src="/profile/descargar (1).jpg" alt="" style="width: 45px; height: 45px"
+										class="rounded-circle" />
 									<div class="ms-3">
 										<p class="fw-bold mb-1" th:text="${usuario.nombre}"></p>
 										<p class="text-muted mb-0" th:text="${usuario.email}"></p>
