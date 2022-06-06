@@ -25,19 +25,19 @@
 				</div>
 			</div>
 			<h3 class="mb-5 text-muted">Lista Candidatos!!!</h3>
-			<div class="col-12 d-flex justify-content-center">
-				<table class="table table-shadow align-middle mb-5">
+			<div class="col-12 d-flex justify-content-center" >
+				<table class="table table-shadow align-middle mb-5" style="background-color:#d58cff;">
 					<thead >
-						<tr style="background-color:#d58cff;">
-							<th scope="col" >Codigo</th>
+						<tr>
+							<th scope="col">Codigo</th>
 							<th scope="col">Nombre</th>
 							<th scope="col">Genero Musical</th>
 							<th scope="col">Descripcion</th>
 							<th scope="col">Cant. Votos</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr th:each="candidato :${candidatos}">
+					<tbody >
+						<tr th:each="candidato :${candidatos}" class="bg-white">
 							<th scope="row" th:text="${candidato.codigo}"></th>
 							<td th:text="${candidato.nombre}"></td>
 							<td th:text="${candidato.genero}"></td>
